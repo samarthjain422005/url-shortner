@@ -102,6 +102,7 @@
         {{form.url_input(class_="url-input")}}
         {{form.submit(class_="url-submit")}}
       </form>
+      {%with messages=get_flashed_messages}
       <div class="">
         <span></span>
       </div>

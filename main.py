@@ -1,5 +1,6 @@
-from flask import Flask , render_template ,request
+from flask import Flask , render_template ,request,flash
 from inputform import InputForm
+import secrets
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "#sammyboy/url-shortner"
@@ -11,7 +12,11 @@ def home():
     form=InputForm()
     if request.method=="POST":
             if form.validate_on_submit(): 
-                 print(form.url_input.data)
+                 destination_url=form.url_input.data
+                 id=secrets.token_urlsafe(8)
+                 shortened_urls.append({"destination_url":destination_url,"id":id})
+                 form.url_input.data=""
+                 flash(f"Success!! your shortned url is: {request.base_url+id}",category="sucess message")
             else:
                  print("failed")
     return render_template("index.html",form=form)
