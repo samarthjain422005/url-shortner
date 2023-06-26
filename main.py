@@ -16,7 +16,7 @@ def home():
                  id=secrets.token_urlsafe(8)
                  shortened_urls.append({"destination_url":destination_url,"id":id})
                  form.url_input.data=""
-                 flash(f"Success!! your shortned url is: {request.base_url+id}",category="sucess message")
+                 flash(f"Success!! your shortned url is: {request.base_url+id}",category="success message")
             else:
                  print("failed")
     return render_template("index.html",form=form)
