@@ -2,6 +2,7 @@ from flask import Flask , render_template
 from inputform import InputForm
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "#sammyboy/url-shortner"
 
 @app.route("/")
 def home():

@@ -98,8 +98,9 @@
     <section class="shortener">
       <h1>URL Shortener</h1>
       <form action="" method="POST">
-        {{form.url_input(class_="url_input")}}
-        {{form.submit(class_="submit")}}
+        {{form.hidden_tag()}}
+        {{form.url_input(class_="url-input")}}
+        {{form.submit(class_="url-submit")}}
       </form>
       <div class="">
         <span></span>
