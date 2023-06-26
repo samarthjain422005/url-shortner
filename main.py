@@ -3,7 +3,7 @@ from InputForm import InputForm
 import secrets
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "abc"
+app.config['SECRET_KEY'] = "sammyboy/url-shortner"
 
 shortened_urls = []
 
@@ -27,6 +27,11 @@ def shortened(id):
         if shortened_url["id"] == id:
             return redirect(shortened_url["destination_url"])
     return abort(404)
+
+@app.route("/search")
+def search():
+    form=SearchForm()
+    return render_template("search.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
