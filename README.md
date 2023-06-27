@@ -62,7 +62,7 @@ This URL Shortener also provides the ability to search for previously shortened 
 
 ## Deployment
 
-The project has been deployed and can be accessed at [https://sammyboy-url-shortner.vercel.app/](https://sammyboy-url-shortner.vercel.app/). Feel free to try it out!
+The project has been deployed and can be accessed at [https://sammyboy-url-shortner.vercel.app/](https://sammyboy-url-shortner.vercel.app/).
 
 ## Learning Takeaways
 
