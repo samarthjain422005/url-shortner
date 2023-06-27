@@ -5,6 +5,7 @@ from wtforms.validators import URL, DataRequired, EqualTo, ValidationError, Leng
 
 class InputForm(FlaskForm):
     url_input= StringField("URL", validators=[URL(message="Please enter a valid URL."), DataRequired()])
+    pseudoname_input= StringField("Pseudo-Name", validators=[DataRequired()])
     submit= SubmitField("Shorten")
 
 class SearchForm(FlaskForm):

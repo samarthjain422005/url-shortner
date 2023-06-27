@@ -99,6 +99,7 @@
       <h1>URL Shortener</h1>
       <form action="" method="POST">
         {{form.hidden_tag()}} {{form.url(class_="url-input")}}
+        {{form.hidden_tag()}} {{form.url(class_="url-input")}}       
         {{form.submit(class_="url-submit")}}
       </form>
       {% with messages = get_flashed_messages(with_categories=True) %} 

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash, redirect, abort
-from InputForm import InputForm
+from inputform import InputForm , SearchForm
 import secrets
 
 app = Flask(__name__)
@@ -12,9 +12,9 @@ def home():
     form = InputForm()
     if request.method == "POST":
         if form.validate_on_submit():
-            id = secrets.token_urlsafe(8)
+            id = form.pseudoname_input.data.index(form.pseudoname_input.data)
             shortened_url = request.base_url + id
-            shortened_urls.append({"destination_url": form.url.data, "id": id})
+            shortened_urls.append({"destination_url": form.url.data , "id": id})
             flash(f"Shortened URL: {shortened_url}", "success message")
             form.url.data=''
         else:
@@ -31,6 +31,15 @@ def shortened(id):
 @app.route("/search")
 def search():
     form=SearchForm()
+    if request.method == "POST":
+        if form.validate_on_submit():
+            for i in shortened_urls:
+                if form.pseudoname_input.data.index(form.pseudoname_input.data) in i[id]:
+                    j=i[destination_url]
+                    flash("URL: "+ j, "success message")
+        else:
+            flash("URL not found !", "error message")
+
     return render_template("search.html")
 
 if __name__ == "__main__":

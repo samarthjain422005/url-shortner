@@ -40,7 +40,7 @@
         text-align: center;
       }
 
-      .url-input {
+      .search-input {
         width: 30%;
         height: 20%;
         border-radius: 1rem;
@@ -50,11 +50,11 @@
         font-size: 1.4rem;
       }
 
-      .url-input:focus {
+      .search-input:focus {
         outline: none;
       }
 
-      .url-submit {
+      .search-submit {
         background-color: #444444;
         color: #ffffff;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -98,8 +98,8 @@
     <section class="shortener">
       <h1>Search URL</h1>
       <form action="" method="POST">
-        {{form.hidden_tag()}} {{form.url(class_="url-input")}}
-        {{form.submit(class_="url-submit")}}
+        {{form.hidden_tag()}} {{form.url(class_="search-input")}}
+        {{form.submit(class_="search-submit")}}
       </form>
       {% with messages = get_flashed_messages(with_categories=True) %} 
         {% if messages %} 
